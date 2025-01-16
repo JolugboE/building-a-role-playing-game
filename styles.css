@@ -4,7 +4,7 @@ body {
   
   #text {
     background-color: #0a0a23;
-    color: #ffffff;
+    color: #f2eded;
     padding: 10px;
   }
   
@@ -40,4 +40,5 @@ body {
     background-color: #feac32;
     background-image: linear-gradient(#fecc4c, #ffac33);
     border: 3px solid #feac32;
+    
   }
