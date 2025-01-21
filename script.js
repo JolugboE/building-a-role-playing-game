@@ -118,11 +118,30 @@ const locations = [
     button2.onclick = sellWeapon
   }
   }
-  
-  function fightSlime() {
-  
+  function sellWeapon() {
+    if (inventory.length > 1) {
+      gold += 15;
+      goldText.innerText = gold;
+  let currentWeapon = inventory.shift();
+  text.innerText = "You sold a " + currentWeapon + "." ;
+  text.innerText += " In your inventory you have: " + inventory
+    }
   }
+  function fightSlime() {
+    fighting = 0;
+   function goFight(){
+     fighting = 0
+   }
+  }
+
   
   function fightBeast() {
+  
+  }
+  function fightDragon() {
+    console.log("Fighting dragon.");
+  }
+  
+  function goFight() {
   
   }
