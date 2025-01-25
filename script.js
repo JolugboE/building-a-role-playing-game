@@ -174,8 +174,12 @@ const locations = [
   
   }
   function defeatMonster(){
-    gold += Math.floor(monsters[fighting].level*6.7);
-  }
+    gold += Math.floor(monsters[fighting].level * 6.7);
+  xp += monsters[fighting].level;
+  goldText.innerText = gold + Math.floor(monsters[fighting].level * 6.7);
+  xpText.innerText = xp + monsters[fighting].level;
+  update(locations[4]);
+}
   function lose(){
   
   }
