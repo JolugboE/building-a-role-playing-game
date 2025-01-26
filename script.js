@@ -203,6 +203,9 @@ const locations = [
   return hit > 0 ? hit : 0;
 
     }
+    function isMonsterHit(){
+      return Math.random() > .2 || health < 20;
+    }
   function dodge() {
   
   }
