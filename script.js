@@ -178,25 +178,29 @@ const locations = [
   function attack() {
     text.innerText = "The " + monsters[fighting].name + " attacks.";
     text.innerText += " You attack it with your " + weapons[currentWeaponIndex].name + ".";
-    health -= monsters[fighting].level;
+    health -= getMonsterAttackValue(monsters[fighting].level);
     if (isMonsterHit()) {
-      monsterHealth -= weapons[currentWeaponIndex].power + Math.floor(Math.random() * xp) + 1;
-    }else{
-      text.innerText += " You miss."
+      monsterHealth -= weapons[currentWeaponIndex].power + Math.floor(Math.random() * xp) + 1;    
+    } else {
+      text.innerText += " You miss.";
     }
     healthText.innerText = health;
-  monsterHealthText.innerText = monsterHealth;
-  if (health <= 0) {
-    lose();
-  }
-  else if (monsterHealth <= 0){
-    defeatMonster();
-  }if (fighting===2){
-      winGame();
-    } else{
-      defeatMonster();
+    monsterHealthText.innerText = monsterHealth;
+    if (health <= 0) {
+      lose();
+    } else if (monsterHealth <= 0) {
+      if (fighting === 2) {
+        winGame();
+      } else {
+        defeatMonster();
+      }
+      if(Math.random() <= .1){
+        
+      }
     }
-  } 
+  
+  }
+  
   function getMonsterAttackValue(level) {
     const hit = (level * 5) - (Math.floor(Math.random() * xp));
   console.log(hit);
