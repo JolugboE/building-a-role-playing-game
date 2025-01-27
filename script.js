@@ -194,8 +194,8 @@ const locations = [
       } else {
         defeatMonster();
       }
-    }
-    if (Math.random() <= .1) {
+    }    
+    if (Math.random() <= .1 && inventory.length !== 1) {
       text.innerText += " Your " + inventory.pop() + " breaks.";
   currentWeaponIndex--;
     }
@@ -207,9 +207,11 @@ const locations = [
   return hit > 0 ? hit : 0;
 
     }
+
     function isMonsterHit(){
       return Math.random() > .2 || health < 20;
     }
+
   function dodge() {
   
   }
@@ -220,9 +222,11 @@ const locations = [
   xpText.innerText = xp + monsters[fighting].level;
   update(locations[4]);
 }
+
   function lose(){
     update(locations[5]);
   }
+
   function restart(){
     xp = 0;
     health = 100;
@@ -234,3 +238,16 @@ const locations = [
     xpText.innerText = xp;
     goTown();
   }
+
+  function easterEgg(){
+    update(locations[7]);
+  }
+  function pick(guess){
+  
+  }
+  function pickTwo(){
+    pick(2);
+    }
+    function pickEight(){
+    pick(8);
+    }
